@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux'
 import { RootReducer } from '../store'
-
+import { nextStep } from '../store/reducers/cart'
 import { close, remove } from '../store/reducers/cart'
 import Button from '../Button'
 import { formataPreco } from '../utils/formatters'
