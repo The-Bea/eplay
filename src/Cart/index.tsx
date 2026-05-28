@@ -14,7 +14,9 @@ import {
 } from './styles'
 
 const Cart = () => {
-  const { items, isOpen } = useSelector((state: RootReducer) => state.cart)
+  const { items, isOpen, step } = useSelector(
+    (state: RootReducer) => state.cart
+  )
 
   const dispatch = useDispatch()
 
@@ -31,6 +33,11 @@ const Cart = () => {
       return acumulador + item.preco
     }, 0)
   }
+
+  const avancarEtapa = () => {
+    dispatch(nextStep())
+  }
+
   return (
     <CartContainer className={isOpen ? 'is-open' : ''}>
       <Overlay onClick={closeCart} />
@@ -59,8 +66,12 @@ const Cart = () => {
         </Price>
         <Button
           type="button"
-          title="Clique para continuar com a entrega"
+          title="Clique para continuar"
           variant="secondary"
+          onClick={(e) => {
+            e.stopPropagation()
+            dispatch(nextStep())
+          }}
         >
           Continuar com a entrega
         </Button>

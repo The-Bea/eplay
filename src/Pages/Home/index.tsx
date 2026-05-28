@@ -1,5 +1,5 @@
 import RestaurantList from '../../RestaurantList'
-import Hero from '../../Hero'
+import Hero from '../../../components/Home/Hero'
 import { useGetRestaurantsQuery } from '../../services/api'
 
 const Home = () => {

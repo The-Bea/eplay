@@ -11,6 +11,7 @@ export const Overlay = styled.div`
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.7);
+  pointer-events: none;
 `
 
 export const CartContainer = styled.div`
@@ -50,6 +51,7 @@ export const SideBar = styled.aside`
   padding: 16px 8px 0 8px;
   max-width: 360px;
   width: 100%;
+  pointer-events: auto;
 
   @media (max-width: ${breackpoints.mobile}) {
     width: 85%;
